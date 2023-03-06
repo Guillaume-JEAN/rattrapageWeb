@@ -17,7 +17,7 @@ axios.get(url)
 .then(function (response) {
   // handle success
   if(response.data){
-    const {Title, Year, Runtime, Actors, Poster, BoxOffice, Ratings} = response.data;
+    const {Title, Year, Runtime,  Actors, Plot, Poster, BoxOffice, Ratings} = response.data;
     
     movies.push({
       id: _.uniqueId(),
@@ -25,6 +25,7 @@ axios.get(url)
       yearOfRelease: Year,
       duration: Runtime, // en minutes,
       actors: Actors,
+      plot: Plot,
       poster: Poster, // lien vers une image d'affiche,
       boxOffice: BoxOffice, // en USD$,
       rottenTomatoesScore: Ratings && Ratings[1].Value
@@ -73,13 +74,14 @@ router.put('/', (req, res) => {
   .then((data) => {
     // handle success
     if(data.data){
-      const {Title, Year, Runtime, Actors, Poster, BoxOffice, Ratings} = data.data;
+      const {Title, Year, Runtime,  Actors, Plot, Poster, BoxOffice, Ratings} = data.data;
       const newMovie = {
         id: _.uniqueId(),
         movie: Title,
         yearOfRelease: Year,
         duration: Runtime, // en minutes,
         actors: Actors,
+        plot: Plot, // résumé du film
         poster: Poster, // lien vers une image d'affiche,
         boxOffice: BoxOffice, // en USD$,
         rottenTomatoesScore: Ratings && Ratings[1].Value

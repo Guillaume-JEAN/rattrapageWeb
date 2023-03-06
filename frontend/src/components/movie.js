@@ -20,7 +20,7 @@ export default class Movie extends React.Component {
 
     render() {
         const { infos, deleteMovie } = this.props;
-        const { id, movie, yearOfRelease, duration, actors, poster, boxOffice, rottenTomatoesScore } = infos;
+        const { id, movie, yearOfRelease, duration, plot, actors, poster, boxOffice, rottenTomatoesScore } = infos;
         const actorsList = split(actors, ',')
 
         return (
@@ -30,6 +30,7 @@ export default class Movie extends React.Component {
                     {this.renderInfo('Title', movie)}
                     {this.renderInfo('Date of release', yearOfRelease)}
                     {this.renderInfo('Duration', duration)}
+                    {this.renderInfo('Story', plot)}
                     {this.renderInfos('Actors', actorsList)}
                     {this.renderInfo('Box office', boxOffice)}
                     {this.renderInfo('Score', rottenTomatoesScore)}
