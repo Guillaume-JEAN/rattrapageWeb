@@ -1,0 +1,43 @@
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    margin: 10px;
+    padding: 25px;
+    border: solid 4px black;
+    border-radius: 10px;
+    background-color: #FFDAC1;
+    box-shadow:  10px 10px 15px rgba(0, 0, 0, .5);
+}
+.movie:hover {
+    background: #aaa;
+    cursor: pointer;
+}
+
+
+.infoLine {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.infoLabel {
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+.infos {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.info {
+    text-align: right;
+}
+
+img {
+    width: 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
